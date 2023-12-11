@@ -1,108 +1,74 @@
 <!DOCTYPE html>
-
 <html>
-
 <head runat="server">
-    <meta charset="utf-8">
-    <title>Login Form</title>
-    <style>
-        /* loginStyles.css */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <meta name="google-signin-client_id" content="140915446312-o6g4gr6bbsmac9dj6293n3i6gaomsd54.apps.googleusercontent.com">
+    
+    <!--Fav icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url(images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg);
-            background-size: cover;
-        }
+    <!--Render all CSS elements-->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <!--Font icons-->
+    <link rel="stylesheet" href="styles/all.min.css">
+    <!--Main CSS elements-->
+    <link rel="stylesheet" href="styles/login.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-        body::after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: -1;
-            background-color: black;
-            opacity: 0.7;
-            top: 0%;
-        }
-
-        .login-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="password"],
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 6px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #7234fa;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        p {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Login</title>
+    
 </head>
 
 <body>
+    <img src="../images/logo.png" class="logo">
     <form id="form1" runat="server" class="login-form">
         <div class="login-container">
             <h2>Login</h2>
             <div class="form-group">
                 <label for="username">Username or Email</label>
-                <input type="text" id="username" name="username" placeholder="Enter username or email" required />
+                <input type="text" id="username" name="username" placeholder="Username or Email" />
+                <span class="invalid-email">Invalid Email</span>
+                <span class="not-found-email">Email not found, please Sign up</span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter password" required />
+                <input type="password" id="password" name="password" placeholder="Password"/>
+                <span class="incorrect-password">Incorrect password</span>
             </div>
             <div class="form-group">
                 <button type="submit">Login</button>
             </div>
             <div class="form-group">
-                <p>Don't have an account? <a href="Register.aspx">Register here</a></p>
+                <p>Don't have an account? <a href="Register.aspx">Sign up</a></p>
             </div>
+            <span class="or">OR</span>
+            <button type="button" class="gsi-material-button">
+                <div class="gsi-material-button-state"></div>
+                <div class="gsi-material-button-content-wrapper">
+                  <div class="gsi-material-button-icon">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                      <path fill="none" d="M0 0h48v48H0z"></path>
+                    </svg>
+                  </div>
+                  <span class="gsi-material-button-contents">Continue with Google</span>
+                  <span style="display: none;">Continue with Google</span>
+                </div>
+              </button>
         </div>
     </form>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="loginForm.js"></script>
 </body>
-
 </html>

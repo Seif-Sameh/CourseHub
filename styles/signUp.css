@@ -8,6 +8,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 a{
@@ -42,6 +43,12 @@ body::after {
     left: 0;
 }
 
+@media(max-width:376px){
+    body{
+        background-image: url("../images/elijah-hail-yLpbSjxMpCU-unsplash.jpg"), url("../images/dollar-gill-Kyoshy7BJIQ-unsplash.jpg"), url("../images/surface-hcJ713eJ0Oc-unsplash.jpg");
+        background-size: 100% 100vh, 100% 100vh, 100% 120vh;
+    }
+}
 .welcome{
     padding-top: 30px;
     margin-left: 50%;
@@ -63,6 +70,18 @@ h1{
     font-weight: 500;
 }
 
+@media(max-width: 376px){
+    .welcome{
+        height: 30vh;
+    }
+    #logo{
+        width: 100px;
+    }
+    h1{
+        font-size: 30px;
+    }
+}
+
 /* Form */
 label{
     display: none;
@@ -76,6 +95,12 @@ label{
     align-items: center;
 }
 
+@media(max-width: 376px){
+    .title{
+        padding-top: 30px;
+        font-size: 30px;
+    }
+}
 /* Step1 */
 
 form .step1{
@@ -107,6 +132,20 @@ form .step1 .role-buttons button{
     user-select: none;
     cursor: pointer;
 }
+
+@media(max-width: 376px){
+    form .step1 p{
+        font-size: 26px;
+    }
+    .role-buttons{
+        flex-direction: column;
+    }
+    form .step1 .role-buttons button{
+        width: 200px;
+        font-size: 20px;
+    }
+}
+
 form .step1 .role-buttons .active{
     background-color:black;
     color: var(--purple);
@@ -174,6 +213,28 @@ form .step1 .role-buttons button:active{
     background-color: var(--light-gray);
 }
 
+@media(max-width: 376px){
+    .step2{
+        width:85%;
+    }
+    .step2 .signup-container {
+        padding: 20px;
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+        row-gap: 20px;
+        height: 20vh;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .step2 .form-group input{
+        height: 40px;
+    }
+    .arrow{
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
 /* Step3 */
 
 
@@ -207,14 +268,14 @@ form .step1 .role-buttons button:active{
     border: 1px solid var(--purple);
 }
 
-.student{
-    display: none;
-}
-.teacher{
-    display: none;
-}
-.center-owner{
+.student-form{
     display: block;
+}
+.teacher-form{
+    display: none;
+}
+.center-owner-form{
+    display: none;
 }
 
 .submit{
@@ -225,247 +286,29 @@ form .step1 .role-buttons button:active{
     width: 50%;
     border-radius: 50px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     border: none;
     cursor: pointer;
     user-select: none;
 }
-/*
-.signup-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.signup-container {
-    width: 320px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-select,
-button {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    background-color: #7234fa;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #5a24cc;
-}
-
-p {
-    text-align: center;
-    margin-top: 10px;
-}
 
 
-
-
-
-
-body {
-    background-image: url("../images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg");
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-}
-@media(max-width: 1024px){
-    body{
-        height: 110vh;
+@media(max-width: 376px){
+    .step3{
+        width: 85%;
+    }
+    .step3 .signup-container {
+        padding: 20px;
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+        row-gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .step3 .form-group input{
+        height: 40px;
+    }
+    .submit{
+        font-size: 20px;
+        width: 85%;
     }
 }
-@media(max-width:376px){
-    body{
-        background-image: url("../images/dollar-gill-Kyoshy7BJIQ-unsplash.jpg");
-    }
-}
-body::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    background-color: black;
-    opacity: 0.7;
-    top: 0;
-    left: 0;
-}
-.logo{
-    width: 250px;
-    position: absolute;
-    left: 50%;
-    top: 50px;
-    transform: translate(-50%);
-}
-
-.login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 25px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.login-container {
-    width: 400px;
-    display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(80, 1fr));
-    row-gap: 10px;
-}
-
-@media(max-width: 375px){
-    .login-container{
-        width: 280px;
-    }
-}
-@media(max-width: 425px) and (min-width: 376px){
-    .login-container{
-        width: 350px;
-    }
-}
-
-h2 {
-    text-align: center;
-    margin-top: 15px 0;
-}
-
-label {
-    display: none;
-}
-
-input[type="text"],
-input[type="password"]{
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-    margin: 6px 0;
-    border-radius: 4px;
-    border: 1px solid var(--light-gray);
-    box-sizing: border-box;
-    outline: none;
-}
-input[type="text"]:focus,
-input[type="password"]:focus{
-    border: 1px solid var(--purple) ;
-}
-.form-group{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.form-group span{
-    margin-top: 5px;
-}
-.form-group button {
-    background-color: #7234fa;
-    color: var(--light-gray);
-    cursor: pointer;
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-    margin: 6px 0;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-}
-
-.form-group button:hover{
-    background-color: #824bf8;
-}
-.form-group button:active {
-    background-color: var(--light-gray);
-    color: var(--purple);
-}
-p {
-    text-align: center;
-    margin: 5px 0;
-}
-
-.form-group a:link,
-.form-group a:visited{
-    color: var(--purple);
-}
-
-.or{
-    font-weight: 300;
-    position: relative;
-    text-align: center;
-    padding: 5px;
-    z-index: 100;
-}
-
-.or::before{
-    content: "";
-    width: 100%;
-    height: 0.1px;
-    position: absolute;
-    background-color: var(--gray);
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-    opacity: 0.5;
-}
-.or::after{
-    content: "";
-    width: 30px;
-    height: 20px;
-    position: absolute;
-    background-color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-.invalid-email,
-.incorrect-password,
-.not-found-email{
-    display: none;
-    color: rgb(204, 56, 56);
-}
-.invalid{
-    border: 1px solid rgb(204, 56, 56) !important;
-}
-.invalid::placeholder{
-    color: rgb(204, 56, 56);
-}
-*/

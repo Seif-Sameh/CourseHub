@@ -1,0 +1,314 @@
+:root{
+    --purple: #7234fa;
+    --light-gray: #ddd8ce; 
+    --dark-blue: #334464;
+    --gray: #222222;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 85%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background-image: url("../images/surface-V_JGp9lnojw-unsplash.jpg"), url("../images/praveen-gupta-YhfxJpa_Ch0-unsplash.jpg"), url("../images/samuel-bourke-sc-B_2-Om7Q-unsplash.jpg");
+    background-size: 100% 100vh, 100% 100vh, 100% auto;
+    background-position-y: 0, 100vh, 200vh;
+    background-repeat: no-repeat;
+    position: relative;
+}
+body::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: black;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+}
+
+@media(max-width:376px){
+    body{
+        background-image: url("../images/elijah-hail-yLpbSjxMpCU-unsplash.jpg"), url("../images/dollar-gill-Kyoshy7BJIQ-unsplash.jpg"), url("../images/surface-hcJ713eJ0Oc-unsplash.jpg");
+        background-size: 100% 100vh, 100% 100vh, 100% 120vh;
+    }
+}
+.welcome{
+    padding-top: 30px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+}
+
+#logo{
+    width:150px;
+    margin: 30px;
+}
+
+h1{
+    color: var(--light-gray);
+    font-size: 60px;
+    font-weight: 500;
+}
+
+@media(max-width: 376px){
+    .welcome{
+        height: 30vh;
+    }
+    #logo{
+        width: 100px;
+    }
+    h1{
+        font-size: 30px;
+    }
+}
+
+/* Form */
+label{
+    display: none;
+}
+
+.title{
+    height: 40vh;
+    font-size: 60px;
+    color: var(--light-gray);
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: 376px){
+    .title{
+        padding-top: 30px;
+        font-size: 30px;
+    }
+}
+/* Step1 */
+
+form .step1{
+    width: 100%;
+    text-align: center;
+    height: 60vh;
+}
+form .step1 p{
+    color: var(--light-gray);
+    font-size: 40px;
+    font-weight: 200;
+}
+
+form .step1 .role-buttons{
+   width: 100%;
+   height: 300px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+form .step1 .role-buttons button{
+    background-color: var(--purple);
+    border-radius: 40px;
+    border: none;
+    color: var(--light-gray);
+    font-size: 30px;
+    padding: 20px 30px;
+    width: 250px;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media(max-width: 376px){
+    form .step1 p{
+        font-size: 26px;
+    }
+    .role-buttons{
+        flex-direction: column;
+    }
+    form .step1 .role-buttons button{
+        width: 200px;
+        font-size: 20px;
+    }
+}
+
+form .step1 .role-buttons .active{
+    background-color:black;
+    color: var(--purple);
+}
+form .step1 .role-buttons .active:hover{
+    background-color: rgb(22, 22, 22);
+}
+form .step1 .role-buttons button:hover{
+    background-color: #611bf8;
+}
+form .step1 .role-buttons button:active{
+    background-color:var(--light-gray);
+    color: var(--purple);
+}
+
+
+/* step2 */
+
+.step2{
+    width: 50%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.step2 .signup-container {
+    width: 100%;
+    height: 30vh;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    row-gap: 20px;
+}
+.step2 .form-group input{
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+}
+.step2 .form-group input:focus{
+    border: 1px solid var(--purple);
+}
+.arrow{
+    font-size: 60px;
+    color: var(--light-gray);
+    background-color: var(--purple);
+    width: 100px;
+    height: 100px;
+    border-radius: 90px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+.arrow:active{
+    color: var(--purple);
+    background-color: var(--light-gray);
+}
+
+@media(max-width: 376px){
+    .step2{
+        width:85%;
+    }
+    .step2 .signup-container {
+        padding: 20px;
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+        row-gap: 20px;
+        height: 20vh;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .step2 .form-group input{
+        height: 40px;
+    }
+    .arrow{
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Step3 */
+
+
+.step3{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.step3 .signup-container {
+    width: 100%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    row-gap: 20px;
+
+}
+.step3 .form-group input{
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+}
+.step3 .form-group input:focus{
+    border: 1px solid var(--purple);
+}
+
+.student-form{
+    display: block;
+}
+.teacher-form{
+    display: none;
+}
+.center-owner-form{
+    display: none;
+}
+
+.submit{
+    background-color: var(--purple);
+    color: var(--light-gray);
+    font-size: 30px;
+    padding: 20px;
+    width: 50%;
+    border-radius: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+@media(max-width: 376px){
+    .step3{
+        width: 85%;
+    }
+    .step3 .signup-container {
+        padding: 20px;
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+        row-gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .step3 .form-group input{
+        height: 40px;
+    }
+    .submit{
+        font-size: 20px;
+        width: 85%;
+    }
+}

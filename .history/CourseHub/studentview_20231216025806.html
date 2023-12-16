@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student User View</title>
+    <link rel="stylesheet" href="Content/studentviewstyles.css">
+    <!-- Link your external CSS file -->
+    <style>
+        /* styles.css */
+
+        /* Add your styles for the Student User View here */
+        /* You can modify these styles as per your design preferences */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-panel,
+        .right-panel {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 45%;
+        }
+
+        .left-panel {
+            position: relative;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .user-info label,
+        .user-info input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .user-info input:disabled {
+            background-color: #eee;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 0px;
+            left: 18px;
+            height: 37px;
+            width: 79px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #7234fa;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #5a24cc;
+        }
+
+        .right-panel table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .right-panel th,
+        .right-panel td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .right-panel th {
+            background-color: #f5f5f5;
+        }
+
+        /*search engin*/
+        .scontainer {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 60%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        #searchButton {
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: none;
+            background-color: #7234fa;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a24cc;
+        }
+
+        .results {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>User Information</h2>
+            <div class="user-info">
+                <label for="name">Name:</label>
+                <input type="text" id="name" disabled value="John Doe">
+                <label for="id">ID:</label>
+                <input type="text" id="id" disabled value="12345">
+                <label for="address">Address:</label>
+                <input type="text" id="address" disabled value="123 Main St">
+                <label for="email">Email:</label>
+                <input type="email" id="email" disabled value="john@example.com">
+                <label for="password">Password:</label>
+                <input type="password" id="password" disabled value="********">
+                <div class="buttons">
+                    <button id="editBtn">Edit</button>
+                    <button id="saveBtn" style="display: none;">Save Changes</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2>Registered Courses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teacher Name</th>
+                        <th>Center Name & Location</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teacher 1</td>
+                        <td>Center A, Location A</td>
+                        <td>Mathematics</td>
+                    </tr>
+                    <tr>
+                        <td>Teacher 2</td>
+                        <td>Center B, Location B</td>
+                        <td>Physics</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <br />
+            <div class="scontainer">
+                <h1>Search Items</h1>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <select id="filterDropdown">
+                        <option value="all">All</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                    </select>
+                    <button id="searchButton">Search</button>
+                </div>
+                <div class="results">
+                    <!-- Display search results here -->
+                    <!-- Dummy content -->
+                    <p>Search results will be displayed here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <!-- Link your external JavaScript file -->
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student User View</title>
+    <link rel="stylesheet" href="Content/studentviewstyles.css">
+    <!-- Link your external CSS file -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>User Information</h2>
+            <div class="user-info">
+                <label for="name">Name:</label>
+                <input type="text" id="name" disabled value="John Doe">
+                <label for="id">ID:</label>
+                <input type="text" id="id" disabled value="12345">
+                <label for="address">Address:</label>
+                <input type="text" id="address" disabled value="123 Main St">
+                <label for="email">Email:</label>
+                <input type="email" id="email" disabled value="john@example.com">
+                <label for="password">Password:</label>
+                <input type="password" id="password" disabled value="********">
+                <div class="buttons">
+                    <button id="editBtn">Edit</button>
+                    <button id="saveBtn" style="display: none;">Save Changes</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2>Registered Courses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teacher Name</th>
+                        <th>Center Name & Location</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teacher 1</td>
+                        <td>Center A, Location A</td>
+                        <td>Mathematics</td>
+                    </tr>
+                    <tr>
+                        <td>Teacher 2</td>
+                        <td>Center B, Location B</td>
+                        <td>Physics</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <br />
+            <div class="scontainer">
+                <h1>Search Items</h1>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <select id="filterDropdown">
+                        <option value="all">All</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                    </select>
+                    <button id="searchButton">Search</button>
+                </div>
+                <div class="results">
+                    <!-- Display search results here -->
+                    <!-- Dummy content -->
+                    <p>Search results will be displayed here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <!-- Link your external JavaScript file -->
+</body>
+
+</html>
